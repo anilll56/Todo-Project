@@ -40,10 +40,10 @@ function MiddleContent({ GroupName2  , Todos , setTodos}) {
                   Todos.map((item) => {
                     return (
                       <div  className='todoİtemCss' key={item._id}>
-                      <div className='ss13'>
                         <div className='HiOutlineCheckDiv' onClick={()=>{changeCompleted(item._id , !item.completed , setTodos ,GroupName2)}}>
                           {item.completed ? <HiCheck className='İconsCss112'/> : null}
                         </div>
+                      <div className='ss13'>
                         <div className={item.completed ? "textCss" : "textCss1"}>{item.text}</div>
                       </div>
                       <div className='İconsDiv22'>
