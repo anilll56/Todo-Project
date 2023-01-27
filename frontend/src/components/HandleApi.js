@@ -15,7 +15,7 @@ const getAllTodos = (setTodos , GroupName2 ) => {
             console.log(err);
         })
     }
-    else if (GroupName2 === "Shearch"){
+    else if (GroupName2 === "Search"){
         axios.get(Url)
         .then(({data})=>{
             setTodos(data);
@@ -24,7 +24,7 @@ const getAllTodos = (setTodos , GroupName2 ) => {
             console.log(err);
         })
     }
-    else if(GroupName2==="important"){
+    else if(GroupName2==="Important"){
         axios.get(Url)
         .then(({data})=>{
             let filteredData = data.filter(todo => todo.important=== true);
@@ -54,7 +54,7 @@ const getAllTodos = (setTodos , GroupName2 ) => {
 const ShearchTodo = (setTodos , text , setGroupName2) => {
     axios.get(Url)
     .then(({data})=>{
-        setGroupName2("Shearch");
+        setGroupName2("Search");
         let filteredData = data.filter(todo =>todo.text.toLowerCase().includes(text.toLowerCase()));
         setTodos(filteredData);
     

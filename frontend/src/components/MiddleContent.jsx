@@ -4,10 +4,9 @@ import { HiOutlineX , HiPencilAlt , HiOutlineStar ,HiStar , HiCheck} from "react
 import { AddTodo  ,getAllTodos ,updateTodo , deleteTodo , changeCompleted , changeImportant} from './HandleApi';
 import { useState } from 'react';
 import { useEffect } from 'react';
-function MiddleContent({setGroupName2 , GroupName2  , Todos , setTodos}) {
+function MiddleContent({ GroupName2  , Todos , setTodos}) {
 
   const [todoText , setTodoText] = useState("");
-  // const [Todos , setTodos] = useState([]);
   const [isUpdating , setIsUpdating]=useState(false);
   const[todoİd, setTodoİd]=useState('');
 

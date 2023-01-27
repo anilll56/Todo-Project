@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './App.css';
- import LeftSide from './components/LeftSide';
+import LeftSide from './components/LeftSide';
 import MiddleContent from './components/MiddleContent';
 
 function App() {

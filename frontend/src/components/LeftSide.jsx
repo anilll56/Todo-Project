@@ -19,16 +19,16 @@ function LeftSİde({setGroupName2 , GroupName2  , Todos , setTodos}) {
     <div className='leftSideCss'>
       <div>
         <div className='ShearchD'  onClick={()=>{setGroupName2("Search")}} >
-            <input type='text' placeholder='Search Todo ...' className='İnputCss1' onChange={(e)=>setShearchText(e.target.value)} />
-            <button className='buttonCss12' onClick={()=>{ShearchTodo(setTodos , shearchText , setGroupName2)}}>Shearch</button>
+            <input type='text' placeholder='Search Todo ...' className='AddGroupİnput' onChange={(e)=>setShearchText(e.target.value)} />
+            <button className='buttonCss12' onClick={()=>{ShearchTodo(setTodos , shearchText , setGroupName2)}}>Search</button>
         </div>
         <div className='categoryCss1'>
-            <div className='categoryİtems' onClick={()=>{setGroupName2("important")}}>
-                <div>important</div>
+            <div className='categoryİtems' onClick={()=>{setGroupName2("Important")}}>
+                <div>Important</div>
                 <div></div>
             </div>
             <div className='categoryİtems' onClick={()=>{setGroupName2("Completed")}}>
-                <div>completed</div>
+                <div>Completed</div>
                 <div></div>
             </div>
             <div className='categoryİtems'onClick={()=>{setGroupName2("All")}}>
