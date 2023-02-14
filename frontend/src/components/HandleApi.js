@@ -115,8 +115,19 @@ const changeImportant = (id , important , setTodos , GroupName2) => {
 
 // Group Api
 
-const getAllGroups = (setGroup) => {
-    axios.get(`${Url}/GetGroup`)
+const getAllGroups = (setGroup , createdAdd1) => {
+    if (createdAdd1=== -1) {
+        axios.get(`${Url}/GetGroup`)
+        .then(({ data }) => {
+            console.log(data);
+            setGroup(data);
+        })
+        .catch((err) => {
+            console.log(err);
+        })    
+    }
+    else 
+        axios.get(`${Url}/GetGroupItemsByCreateAd1`)
         .then(({ data }) => {
             console.log(data);
             setGroup(data);

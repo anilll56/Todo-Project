@@ -1,8 +1,10 @@
 const { Router } = require('express');
-const { getTodo, saveTodo, updateTodo, deleteTodo , changeCompleted  , changeImportant , AddGroup ,deleteGroup ,getGroups ,deleteGroupİtems} = require('../Controllers/TodoControllers');
+const { getTodo, saveTodo, updateTodo, deleteTodo , changeCompleted  , changeImportant , AddGroup ,deleteGroup ,getGroups ,deleteGroupİtems, getGroupsByCreateAd1 , getTodoByCreateAd1} = require('../Controllers/TodoControllers');
 const router = Router();
 
 router.get('/', getTodo);
+
+router.get("/getTodoByCreateAd1", getTodoByCreateAd1);
 
 router.post("/save" , saveTodo );
 
@@ -19,6 +21,8 @@ router.post("/deleteGroupitems" , deleteGroupİtems);
 // Groups Routes
 
 router.get("/GetGroup", getGroups);
+
+router.get("/GetGroupItemsByCreateAd1", getGroupsByCreateAd1)
 
 router.post("/AddGroup", AddGroup);
 

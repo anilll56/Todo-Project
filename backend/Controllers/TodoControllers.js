@@ -9,6 +9,11 @@ module.exports.getTodo = async (req, res) => {
      .then((data) => res.send(data));
 }
 
+module.exports.getTodoByCreateAd1 = async (req, res) => {
+    todoModel.find({}).sort({ createdAt: 1 })
+    .then((data) => res.send(data));
+}
+
 module.exports.saveTodo = async (req, res) => {
     const { text , group} = req.body;
 
@@ -85,6 +90,10 @@ module.exports.AddGroup = (req, res) => {
 
 module.exports.getGroups = async (req, res) => {
     const groups = await groupModel.find({}).sort({ createdAt: -1 });
+    res.send(groups);
+}
+module.exports.getGroupsByCreateAd1 = async (req,res) =>{
+    const groups = await groupModel.find({}).sort({ createdAt: 1 });
     res.send(groups);
 }
 

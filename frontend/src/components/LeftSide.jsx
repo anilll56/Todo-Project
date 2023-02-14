@@ -9,6 +9,11 @@ function LeftSİde({setGroupName2 , GroupName2  , Todos , setTodos}) {
   const [group , setGroup] = useState([])
   const [groupName , setGroupName] = useState("");
   const [shearchText , setShearchText] = useState("");
+  const [createAdd1 , setCreateAdd1] = useState(-1)
+  const ChangeList = (setCreateAdd1 , setGroup , createAdd1) => {
+    setCreateAdd1(createAdd1*-1)
+    getAllGroups(setGroup , createAdd1)
+  }
 
   useEffect(() => {
     getAllGroups(setGroup)
@@ -41,6 +46,8 @@ function LeftSİde({setGroupName2 , GroupName2  , Todos , setTodos}) {
             <input value={groupName} type="text" placeholder='Add Group..' className='AddGroupİnput' onChange={(e)=>setGroupName(e.target.value)}/>
             <button className='addButtonCss' onClick={()=>{AddGroup(groupName ,setGroupName ,setGroup)}}>Add</button>
         </div>
+        <div onClick={()=>{ChangeList(setCreateAdd1 , setGroup , createAdd1)}}>Change</div>
+        <hr  className='HrCss'/>
         <div className='groupsCss1'>
           {
             group.map((item ) => {

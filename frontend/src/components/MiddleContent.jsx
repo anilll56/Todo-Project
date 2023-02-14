@@ -2,6 +2,7 @@ import React from 'react'
 import './MiddleContent.css'
 import { HiOutlineX , HiPencilAlt , HiOutlineStar ,HiStar , HiCheck} from "react-icons/hi";
 import { AddTodo  ,getAllTodos ,updateTodo , deleteTodo , changeCompleted , changeImportant} from './HandleApi';
+import { FiArrowUp ,FiArrowDown  } from "react-icons/fi";
 import { useState } from 'react';
 import { useEffect } from 'react';
 function MiddleContent({ GroupName2  , Todos , setTodos}) {
@@ -9,6 +10,7 @@ function MiddleContent({ GroupName2  , Todos , setTodos}) {
   const [todoText , setTodoText] = useState("");
   const [isUpdating , setIsUpdating]=useState(false);
   const[todoİd, setTodoİd]=useState('');
+  const  [changeListType , setChangeListType] = useState(false);
 
 
   useEffect (() => {
@@ -27,6 +29,7 @@ function MiddleContent({ GroupName2  , Todos , setTodos}) {
             <div className='groupTitleCss'>
                 <div className='groupTitleCss1'>{GroupName2}</div>
                 <div className='groupTitleCss2'>{Todos.length} item </div>
+                <div>{ changeListType ? <FiArrowUp className='fiArrow'/>  : <FiArrowDown className='fiArrow'/> }</div>
             </div>
             <div className='addİtem1'>
                 <input  type='text' placeholder='Add a todo item ...'  className='addİtemİnput44'  value={todoText} onChange={(e)=>setTodoText
